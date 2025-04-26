@@ -144,7 +144,7 @@ export const Services = () => {
                 {filteredServices.map((service, index) => (
                   <motion.div
                     key={index}
-                    className="bg-gradient-to-br from-amber-50 to-amber-100 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between h-64" // Added flex and h-64
+                    className="bg-gradient-to-br from-amber-50 to-amber-100 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between h-64"
                     whileHover={{ 
                       y: -5,
                       boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
@@ -159,13 +159,18 @@ export const Services = () => {
                       <h3 className="font-semibold text-sm text-amber-900 mb-2">{service.title}</h3>
                       <p className="text-xs text-amber-700 mb-3">{service.description}</p>
                     </div>
-                    <Button 
-                      variant="default" 
-                      className="w-full bg-gradient-to-r from-orange-400 to-amber-500 hover:from-orange-500 hover:to-amber-600 text-white border-none"
-                      size="sm"
+                    <a 
+                      href="https://prebooking.d0lt.com/login" 
+                      className="w-full"
                     >
-                      Book Now
-                    </Button>
+                      <Button 
+                        variant="default" 
+                        className="w-full bg-gradient-to-r from-orange-400 to-amber-500 hover:from-orange-500 hover:to-amber-600 text-white border-none"
+                        size="sm"
+                      >
+                        Book Now
+                      </Button>
+                    </a>
                   </motion.div>
                 ))}
               </div>

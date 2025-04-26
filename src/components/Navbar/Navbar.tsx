@@ -1,6 +1,5 @@
 import { useState, useEffect, memo } from "react";
 import { Menu, X } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { useNavigate, useLocation } from "react-router-dom";
 import { Link as ScrollLink } from "react-scroll";
 import axios from "axios";
@@ -163,22 +162,22 @@ const Navbar = memo(() => {
           </div>
 
           <div className="hidden lg:flex items-center space-x-4">
-            <button
+            <a
+              href="https://prebooking.d0lt.com/login"
               className="relative overflow-hidden group"
-              onClick={() => navigate("/Login")}
             >
               <span className={`relative z-10 font-bold text-sm ${
                 scrolled ? 'text-red-600' : 'text-white'
               }`}>Log in</span>
               <span className="absolute bottom-0 left-0 w-full h-0.5 bg-red-500 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
-            </button>
+            </a>
 
-            <Button
-              className="bg-gradient-to-r from-yellow-400 to-yellow-500 hover:from-yellow-500 hover:to-yellow-600 text-red-700 font-medium px-5 py-2 text-sm rounded-full transition-all transform hover:-translate-y-0.5 hover:shadow-lg"
-              onClick={() => navigate("/signup")}
+            <a
+              href="https://prebooking.d0lt.com/signup"
+              className="bg-gradient-to-r from-yellow-400 to-yellow-500 hover:from-yellow-500 hover:to-yellow-600 text-red-700 font-medium px-5 py-2 text-sm rounded-full transition-all transform hover:-translate-y-0.5 hover:shadow-lg inline-block"
             >
               Join Us - It's Free
-            </Button>
+            </a>
           </div>
           
           <div className="lg:hidden flex items-center">
@@ -200,26 +199,21 @@ const Navbar = memo(() => {
             </div>
             
             <div className="flex flex-col gap-3 px-6 pt-2 pb-4">
-              <Button
-                onClick={() => {
-                  navigate("/Login");
-                  setIsOpen(false);
-                }}
-                className="bg-white text-red-600 border border-red-500 hover:bg-red-50 transition-colors text-sm py-2.5 font-medium"
-                variant="outline"
+              <a
+                href="https://prebooking.d0lt.com/login"
+                className="bg-white text-red-600 border border-red-500 hover:bg-red-50 transition-colors text-sm py-2.5 font-medium text-center rounded-md"
+                onClick={() => setIsOpen(false)}
               >
                 Log in
-              </Button>
+              </a>
   
-              <Button 
-                className="bg-gradient-to-r from-yellow-400 to-yellow-500 hover:from-yellow-500 hover:to-yellow-600 text-red-700 text-sm py-2.5 font-medium"
-                onClick={() => {
-                  navigate("/signup");
-                  setIsOpen(false);
-                }}
+              <a 
+                href="https://prebooking.d0lt.com/signup"
+                className="bg-gradient-to-r from-yellow-400 to-yellow-500 hover:from-yellow-500 hover:to-yellow-600 text-red-700 text-sm py-2.5 font-medium text-center rounded-md"
+                onClick={() => setIsOpen(false)}
               >
                 Join Us - It's Free
-              </Button>
+              </a>
             </div>
           </div>
         )}

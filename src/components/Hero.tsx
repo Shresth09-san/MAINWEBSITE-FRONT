@@ -10,6 +10,14 @@ export const Hero = () => {
   const contentRef = useRef(null);
   const serviceChooseRef = useRef(null); // New ref for ServiceChoose component
 
+  // Function to scroll to service section
+  const scrollToServices = () => {
+    serviceChooseRef.current?.scrollIntoView({ 
+      behavior: 'smooth',
+      block: 'start'
+    });
+  };
+
   useEffect(() => {
     // Split text into characters
     const titleText = new SplitType(titleRef.current!, { types: "chars" });
@@ -110,7 +118,10 @@ export const Hero = () => {
               ref={buttonRef}
               className="flex flex-col md:flex-row items-center justify-center gap-6 mb-4 z-20 w-full"
             >
-              <button className="w-full md:w-[20vw] bg-gradient-to-br from-yellow-400 to-amber-500 hover:from-yellow-500 hover:to-amber-600 text-white font-bold px-10 py-4 h-auto rounded-full text-lg shadow-[0_8px_30px_rgb(255,193,7,0.3)] transition-all duration-300 hover:scale-105 hover:shadow-[0_8px_35px_rgb(255,193,7,0.45)] border-b-4 border-amber-600 border-2 border-white/30">
+              <button 
+                onClick={scrollToServices} 
+                className="w-full md:w-[20vw] bg-gradient-to-br from-yellow-400 to-amber-500 hover:from-yellow-500 hover:to-amber-600 text-white font-bold px-10 py-4 h-auto rounded-full text-lg shadow-[0_8px_30px_rgb(255,193,7,0.3)] transition-all duration-300 hover:scale-105 hover:shadow-[0_8px_35px_rgb(255,193,7,0.45)] border-b-4 border-amber-600 border-2 border-white/30"
+              >
                 Book Service
               </button>
               <button className="w-full md:w-[20vw] bg-gradient-to-r from-red-500 to-amber-600 hover:from-red-600 hover:to-amber-600 text-white font-bold px-10 py-4 h-auto rounded-full text-lg shadow-[0_8px_30px_rgba(239,68,68,0.3)] transition-all duration-300 hover:scale-105 hover:shadow-[0_8px_35px_rgba(239,68,68,0.45)] border-2 border-white/30">

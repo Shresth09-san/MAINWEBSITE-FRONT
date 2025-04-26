@@ -1,6 +1,4 @@
 import React, { createContext, useContext, useState } from "react";
-import { loadingHelpers } from './loading.utils';
-
 interface LoadingContextType {
   isLoading: boolean;
   setIsLoading: (loading: boolean) => void;
